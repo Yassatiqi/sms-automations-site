@@ -390,6 +390,14 @@
       text-decoration: underline;
     }
 
+    .contact-card {
+      background-color: var(--color-card-highlight);
+      border: 1px solid var(--color-surface-border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
     @media print {
       header.site-header, footer.site-footer {
         display: none;
@@ -425,10 +433,10 @@
       </a>
       <nav aria-label="Main Navigation">
         <ul class="nav-links">
-          <li><a href="index.html">Product</a></li>
+          <li><a href="index.html">Overview</a></li>
           <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#limitations">Limitations</a></li>
           <li><a href="privacy.html" class="active" aria-current="page">Privacy Policy</a></li>
-          <li><a href="https://github.com/Yassatiqi/SmsForwarder" target="_blank" rel="noopener noreferrer">GitHub</a></li>
         </ul>
       </nav>
     </div>
@@ -442,7 +450,7 @@
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
         </svg>
-        Verified Local-First Architecture
+        Local-First Architecture
       </div>
 
       <h1>Privacy Policy — SMS Automations</h1>
@@ -464,10 +472,10 @@
         <p>SMS Automations is engineered from the ground up to respect user privacy and adhere to the principle of least privilege. The application operates <strong>exclusively on your device</strong>:</p>
         <ul>
           <li><strong>No Remote Servers:</strong> The application does not maintain, connect to, or interact with any cloud backend, server infrastructure, or remote API endpoint.</li>
-          <li><strong>No Internet Access:</strong> The application does not declare or request the <code>android.permission.INTERNET</code> permission in its Android Manifest. It is technically and architecturally impossible for the application to transmit data over the internet or exfiltrate content.</li>
+          <li><strong>No Internet Access:</strong> The application does not declare or request the <code>android.permission.INTERNET</code> permission in its Android Manifest. Under the Android OS security model, the operating system prevents the application from opening network sockets or transmitting data to remote internet servers.</li>
           <li><strong>No Analytics / No Trackers:</strong> The application includes no third-party software development kits (SDKs), no advertising networks, no crash reporting beacons, and no behavioral analytics or telemetry frameworks.</li>
           <li><strong>No Account Required:</strong> The application requires no user account, registration, login credentials, email address, or third-party authentication.</li>
-          <li><strong>Carrier Cellular Transmission:</strong> Forwarded messages necessarily leave your device via your mobile carrier's cellular network radio to reach your designated destination phone numbers according to your configured rules. SMS Automations does not operate any intermediary servers and never collects, inspects, or sends your message data to the developer.</li>
+          <li><strong>Carrier Cellular Transmission (Not End-to-End Encrypted):</strong> Forwarded messages leave your device via your mobile carrier's cellular radio stack to reach your designated destination phone numbers according to your configured rules. SMS Automations operates strictly locally on your device and does not run intermediary servers, cloud relays, or developer collection endpoints. However, users should note that <strong>standard cellular SMS and text MMS transmissions are handled by telecommunications carriers and are not end-to-end encrypted</strong>. Message contents transmitted over cellular networks are subject to carrier-level telecommunications routing.</li>
         </ul>
       </section>
 
@@ -565,12 +573,17 @@
 
       <!-- Section 5 -->
       <section id="section-5">
-        <h2>5. Contact Information &amp; Codebase Auditing</h2>
-        <p>SMS Automations is developed as an open, verifiable utility. If you have questions regarding this Privacy Policy or the security architecture of SMS Automations, or if you wish to audit the source code, please submit an issue on the official project repository:</p>
+        <h2>5. Developer Contact &amp; Privacy Inquiries</h2>
         <p>
-          <a href="https://github.com/Yassatiqi/SmsForwarder" target="_blank" rel="noopener noreferrer">
-            https://github.com/Yassatiqi/SmsForwarder
-          </a>
+          If you have questions, inquiries, or feedback regarding this Privacy Policy or the local data handling practices of SMS Automations, please contact the developer:
+        </p>
+        <div class="contact-card">
+          <p><strong>Application:</strong> SMS Automations</p>
+          <p><strong>Package Name:</strong> <code>com.smsforwarder</code></p>
+          <p><strong>Developer Contact:</strong> <a href="mailto:smsautomations.app@gmail.com">smsautomations.app@gmail.com</a></p>
+        </div>
+        <p>
+          <strong>Notice Regarding User Data Requests:</strong> Because SMS Automations operates strictly on your physical device without remote servers, user accounts, or cloud infrastructure, the developer does not possess, receive, or store any of your message contents, activity logs, or automation configurations. Consequently, the developer has no technical ability to access, retrieve, or disclose your personal communications.
         </p>
       </section>
 
@@ -581,13 +594,13 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div>
-        &copy; 2026 SMS Automations. 100% on-device cellular routing utility.
+        &copy; 2026 SMS Automations (Package: <code>com.smsforwarder</code>). All rights reserved.
       </div>
       <ul class="footer-links">
         <li><a href="index.html">Overview</a></li>
         <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#limitations">Limitations</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="https://github.com/Yassatiqi/SmsForwarder" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
       </ul>
     </div>
   </footer>
